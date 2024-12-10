@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Post: Identifiable {
+struct PostView: Identifiable {
 	let id: String
 	let title: String
 }

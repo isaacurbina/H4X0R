@@ -8,9 +8,9 @@
 import SwiftUI
 
 let posts = [
-	Post(id: "1", title: "Hello"),
-	Post(id: "2", title: "Bonjour"),
-	Post(id: "3", title: "Hola")
+	PostView(id: "1", title: "Hello"),
+	PostView(id: "2", title: "Bonjour"),
+	PostView(id: "3", title: "Hola")
 ]
 
 struct ContentView: View {
