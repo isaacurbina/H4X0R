@@ -7,20 +7,21 @@
 
 import SwiftUI
 
-let posts = [
-	PostView(id: "1", title: "Hello"),
-	PostView(id: "2", title: "Bonjour"),
-	PostView(id: "3", title: "Hola")
-]
-
 struct ContentView: View {
+	
+	@ObservedObject var networkManager = NetworkManager()
+	
     var body: some View {
 		NavigationView {
-			List(posts) { post in
-				Text(post.title)
+			List(networkManager.posts) { post in
+				HStack {
+					Text(String(post.points))
+					Text(post.title)
+				}
 			}
 			.navigationTitle("H4X0R NEWS")
 		}
+		.onAppear() { networkManager.fetchData() }
     }
 }
 
